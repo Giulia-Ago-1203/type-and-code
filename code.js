@@ -44,19 +44,19 @@ export function disegnaPunto({
 }) {
   const size = sin((frameCount + indice) * 6) * ((volume * unita) / 2) * unita;
 
-  // if (indice % 2 == 0) {
-  //   fill("white");
-  // } else {
-  //   fill("black");
-  // }
-  // noStroke();
+  if (indice % 2 == 0) {
+    fill("white");
+  } else {
+    fill("black");
+  }
+  noStroke();
 
-  // push();
-  // translate(x, y);
-  // rotate(frameCount * 20 + indice * 10);
-  // translate(volume * 300, 0);
-  // ellipse(20, 0, 5, 5);
-  // pop();
+  push();
+  translate(x, y);
+  rotate(frameCount * 20 + indice * 10);
+  translate(volume * 300, 0);
+  ellipse(20, 0, 5, 5);
+  pop();
 
   // push();
   // translate(x, y);
