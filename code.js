@@ -44,8 +44,11 @@ export function disegnaPunto({
 }) {
   push();
   translate(x, y);
-  stroke("white");
-  line(0, 0, 0, beta);
+  stroke("lightgreen");
+
+  let b = map(beta, -90, 90, -unita * 2, unita * 2);
+  let g = map(gamma, -90, 90, -unita * 2, unita * 2);
+  line(0, 0, g, b);
   pop();
 }
 
@@ -69,7 +72,7 @@ export function impostazioni() {
  * @param {function} disegnaTesto - La funzione che disegna il testo
  */
 export function sotto(disegnaTesto) {
-  background("deeppink");
+  background("purple");
 
   // [INFO] Rimuovi il commento per disegnare il testo
   // fill("white");
