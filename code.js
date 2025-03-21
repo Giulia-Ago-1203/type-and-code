@@ -1,5 +1,5 @@
 export const configurazione = {
-  testo: "A",
+  testo: "SPYPE",
 
   dimensione: 0.8,
   interlinea: 0.7,
@@ -7,9 +7,9 @@ export const configurazione = {
   percorsoFont: "./assets/InputMonoCondensed-BoldItalic.ttf",
 
   sensibilitàMicrofonoBase: 1,
-  densitàPuntiBase: 1,
+  densitàPuntiBase: 5,
 
-  nascondiInterfaccia: false,
+  nascondiInterfaccia: true,
 };
 
 /**
@@ -42,12 +42,13 @@ export function disegnaPunto({
   beta = 0,
   gamma = 0,
 }) {
-  const size = sin((frameCount + indice) * 6) * ((volume * unita) / 2) * unita;
+  const size = sin((frameCount + indice) * 5) * ((volume * 20) / 2) * 40;
+  let lunghezza = map(volume * 100, 0, 1, 0, 50);
 
   if (indice % 2 == 0) {
-    fill("black");
+    fill("deeppink");
   } else {
-    fill("white");
+    fill("black");
   }
   noStroke();
 
@@ -55,7 +56,27 @@ export function disegnaPunto({
   translate(x, y);
   ellipse(0, 0, size);
   pop();
+
+  // stroke("black");
+  // strokeWeight = lunghezza;
+  // translate(width / 3, height / 3);
+  // rotate(lunghezza);
+  // fill("black");
+  // ellipse(0, 0, 5, lunghezza);
 }
+
+//   if (indice % 2 == 0) {
+//     fill("black");
+//   } else {
+//     fill("white");
+//   }
+//   noStroke();
+
+//   push();
+//   translate(x, y);
+//   ellipse(0, 0, size);
+//   pop();
+// }
 
 /**
  * Carica le risorse necessarie
@@ -77,7 +98,7 @@ export function impostazioni() {
  * @param {function} disegnaTesto - La funzione che disegna il testo
  */
 export function sotto(disegnaTesto) {
-  background("deeppink");
+  background("black");
 
   // [INFO] Rimuovi il commento per disegnare il testo
   fill("white");
