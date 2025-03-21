@@ -1,5 +1,5 @@
 export const configurazione = {
-  testo: "A",
+  testo: "SPYPE",
 
   dimensione: 0.8,
   interlinea: 0.7,
@@ -7,7 +7,7 @@ export const configurazione = {
   percorsoFont: "./assets/InputMonoCondensed-BoldItalic.ttf",
 
   sensibilitàMicrofonoBase: 1,
-  densitàPuntiBase: 1,
+  densitàPuntiBase: 10,
 
   nascondiInterfaccia: true,
 };
@@ -44,17 +44,42 @@ export function disegnaPunto({
 }) {
   const size = sin((frameCount + indice) * 6) * ((volume * unita) / 2) * unita;
 
-  if (indice % 2 == 0) {
-    fill("black");
-  } else {
-    fill("white");
-  }
-  noStroke();
+  // if (indice % 2 == 0) {
+  //   fill("white");
+  // } else {
+  //   fill("black");
+  // }
+  // noStroke();
 
-  push();
-  translate(x, y);
-  rect(0, 0, size);
-  pop();
+  // push();
+  // translate(x, y);
+  // rotate(frameCount * 20 + indice * 10);
+  // translate(volume * 300, 0);
+  // ellipse(20, 0, 5, 5);
+  // pop();
+
+  // push();
+  // translate(x, y);
+  // rotate(random(0, 360));
+  // translate(volume * 400, 0);
+  // noStroke();
+  // // fill("white");
+  // ellipse(0, 0, 2, 2);
+  // pop();
+
+  // const size = sin((frameCount + indice) * 6) * ((volume * unita) / 2) * unita;
+
+  // if (indice % 2 == 0) {
+  //   fill("black");
+  // } else {
+  //   fill("white");
+  // }
+  // noStroke();
+
+  // push();
+  // translate(x, y);
+  // ellipse(0, 0, size);
+  // pop();
 }
 
 /**
@@ -77,9 +102,10 @@ export function impostazioni() {
  * @param {function} disegnaTesto - La funzione che disegna il testo
  */
 export function sotto(disegnaTesto) {
-  background("deeppink");
+  background("black");
 
   // [INFO] Rimuovi il commento per disegnare il testo
+  // noFill();
   fill("white");
   disegnaTesto();
 }
