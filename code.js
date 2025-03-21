@@ -9,7 +9,7 @@ export const configurazione = {
   sensibilitàMicrofonoBase: 1,
   densitàPuntiBase: 1,
 
-  nascondiInterfaccia: false,
+  nascondiInterfaccia: true,
 };
 
 /**
@@ -53,7 +53,7 @@ export function disegnaPunto({
 
   push();
   translate(x, y);
-  ellipse(0, 0, size);
+  rect(0, 0, size);
   pop();
 }
 
